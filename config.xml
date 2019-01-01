@@ -26,5 +26,6 @@
         <preference name="android-installLocation" value="auto" />
         <preference name="SplashMaintainAspectRatio" value="true" />
         <allow-intent href="market:*" />
+        <icon density="hdpi" src="www/res/icons/android/drawable-hdpi-icon.png" />
     </platform>
 </widget>
