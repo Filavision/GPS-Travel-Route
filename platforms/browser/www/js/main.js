@@ -5,14 +5,14 @@ var geodata = [];
 
 //initApp------------------------------------------------------------------------------------------------
 function initApp(){
+mySwiper = new Swiper(".swiper-container", {threshold:10,autoHeight:true});
 if(typeof NativeStorage!=="undefined"){storagetype=0;}else{storagetype=1;}
 if (storagetype==0){
-NativeStorage.getItem("geodata", function(result){if(typeof result==="object"){geodata = result}else{geodata = []}}, function(e){geodata = []});
+NativeStorage.getItem("geodata", function(result){if(typeof result==="object"){geodata = result}else{geodata = []}; buildpage("start");}, function(e){geodata = []; buildpage("start");});
 }else{
 if (localStorage.getItem("geodata")!=null){geodata = JSON.parse(localStorage.getItem("geodata")) || []}else{geodata = []}
-}
-mySwiper = new Swiper(".swiper-container", {threshold:10,autoHeight:true});
 buildpage("start");
+}
 }
 
 //backbutton------------------------------------------------------------------------------------------------------
